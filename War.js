@@ -43,7 +43,9 @@ function startGame() {
   deck.shuffle()
 
   const deckMidpoint = Math.ceil(deck.numberOfCards / 2)
+        // GIVES THE HUMAN THE 1ST 26 CARDS OF THE DECK
   playerDeck = new Deck(deck.cards.slice(0, deckMidpoint))
+        // GIVES THE COMPUTER THE LAST 26 CARDS OF THE DECK
   computerDeck = new Deck(deck.cards.slice(deckMidpoint, deck.numberOfCards))
   inRound = false
   stop = false
@@ -57,6 +59,7 @@ function cleanBeforeRound() {
   playerCardSlot.innerHTML = ""
   text.innerText = ""
 
+      // UPDATING THE CARD COUNT BEFORE THE NEXT ROUND 
   updateDeckCount()
 }
 
